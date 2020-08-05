@@ -1,0 +1,21 @@
+version: '2'
+services:
+  mqdm:
+    image: ymmtr6/mqdm
+    restart: always
+    ports:
+      - 8686:8686
+    env_file:
+      - .env
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: username
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 27077:27017
+    volumes:
+      - ./db:/data/db
+      - ./configdb:/data/configdb

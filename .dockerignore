@@ -1,0 +1,5 @@
+db
+secret.env
+package-lock.json
+configdb
+node_modules
